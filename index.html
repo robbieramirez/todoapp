@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+
+<html lang="en" ng-app="todoApp">
+
+<head>
+  <title>Todo Test</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Todo App test for Robert Ramirez">
+  <meta name="author" content="Todo App test using Robert Ramirez custom SASS Framework">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  <!--Only for responsive sites-->
+
+  <!-- Framework Styles  -->
+  <link rel="stylesheet" href="styles/normalize-min.css">
+<!--  <link rel="stylesheet" href="assets/styles/fontawesome/css/font-awesome.min.css">-->
+
+  <!-- Project Styles -->
+  <link rel="stylesheet" href="styles/abstract.css">
+
+  <!-- FONTS -->
+  <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+  <!-- JS -->
+  <script src="scripts/modernizr-2.8.3.js"></script>
+  <script src="scripts/jquery-2.1.4.min.js"></script>
+  <script src="plugins/angular/angular.min.js"></script>
+  <script src="scripts/todoapp.js"></script>
+<!--  <script src="assets/scripts/jquery.sticky-kit.js"></script>-->
+
+</head>
+
+<body>
+
+  <section id="todo">
+    <div class="row"  ng-controller="TodoListController as todoList">
+      <h2>Todo App</h2>
+
+<!-- New Todo Section -->
+      <div id="todo_new">
+        <form ng-submit="addItem()">
+              <input type="text" ng-model="listItem"  size="30"
+                     placeholder="Add a Todo">
+              <input type="submit" value="add">
+      </form>
+    </div>
+
+<!-- Todo List Section -->
+      <div id="todo_list">
+        <h2>Todo List</h2>
+          <ul class="todo_listitems">
+            <li ng-repeat="todo in todoList"><input type="checkbox" /><button>{{todo.text}} {{todo.date | date: shortDate}}</button><button ng-click="clearItem($index)">&times;</button></li>
+
+
+          </ul>
+      </div>
+
+<!-- Remove Section -->
+  <div id="todo_clear">
+      <button ng-click="clearList()">Clear List</button><br />
+    </div>
+
+
+
+    </div>
+  </section>
+
+</body>
+
+</html>
+
+<!-- Template -->
+<section>
+  <div class="row">
+
+  </div>
+</section>

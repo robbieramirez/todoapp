@@ -1,0 +1,320 @@
+/*************************************
+WebEngine SCSS Framework v0.4.0
+Project: WebEngine SCSS Framework
+Author: Robena Corp. - Robert Ramirez
+Copyright 2016
+Last Updated: 01/24/2016
+Free to use under the MIT license.
+http://www.opensource.org/licenses/mit-license.php
+*************************************/
+/* TODO: Add Fonts file (framework and project) */
+/*
+======================================
+	DEBUG MODE
+======================================
+TODO: Create debugs for bgcolor, section outlines and all outlines
+*/
+/*
+======================================
+	FRAMEWORK | STYLES
+======================================
+*/
+/* Import Variables and Mixins first */
+/*************************************
+	FRAMEWORK | GLOBAL COLORS
+*************************************/
+/*************************************
+	PROJECT COLORS
+*************************************/
+/*************************************
+	FRAMEWORK COLORS
+*************************************/
+/* BLUEPRINT COLORS */
+/*** FRAMEWORK | TYPOGRAPHY ***/
+/* TODO: Add these mixins: thin, light, normal, medium, semibold, bold, bolder, black, xs, xl, xxl
+Maybe mimic the way Google fonts has it split up.
+*/
+/*** HEADING STYLES ***/
+h1, h2, h3, h4, h5, h6 {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  font-weight: 300; }
+
+h1 {
+  line-height: 1.2; }
+
+/* Used For: ... */
+/* SEO Primary */
+/* TODO: Optionally set to font style */
+h2 {
+  line-height: 1.25; }
+
+/* Used For: ... */
+/* SEO Secondary */
+h3 {
+  line-height: 1.3; }
+
+/* Used For: ... */
+h4 {
+  line-height: 1.35; }
+
+/* Used For: ... */
+h5 {
+  line-height: 1.5; }
+
+/* Used For: ... */
+/* LOREM IPSUM TEXT PLACEHOLDERS */
+.ipsum1:before {
+  content: "Pellentesque dolor nisl, porttitor a vulputate id, pharetra et diam. Praesent in placerat lorem. Phasellus semper lacinia ipsum nec accumsan."; }
+
+.ipsum2:before {
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus sem et lorem elementum pretium. Vivamus nec dolor sit amet metus accumsan fringilla.  Suspendisse congue non felis ac aliquet. Maecenas fringilla lacus at pretium pretium. Nam sed justo nec risus hendrerit ultrices. Sed laoreet sem vel nunc ultricies sodales."; }
+
+.ipsum3:before {
+  content: "Curabitur dictum justo hendrerit, ultrices dui non, auctor turpis. Sed vel neque eu elit gravida dapibus. Ut magna elit, accumsan eget varius non, faucibus ut nulla. Nulla auctor, dolor nec lacinia luctus, velit massa elementum leo, vitae fringilla mauris urna at massa. Curabitur laoreet, erat et suscipit molestie, ligula nulla rhoncus diam, ut facilisis nisl quam at nunc. Aliquam vitae dui sem. Sed lobortis laoreet nulla, vel placerat lacus scelerisque a. Vivamus in rhoncus dui, quis molestie lectus. Donec vitae velit id massa bibendum bibendum non ut lacus. Proin tincidunt est eros, nec gravida arcu vestibulum in. Vivamus sollicitudin condimentum ante sed rhoncus. Ut augue purus, scelerisque nec quam eu, dictum aliquam eros. Curabitur ornare venenatis magna ac iaculis. Cras in fringilla arcu, placerat adipiscing tellus. Vestibulum porta, dolor nec hendrerit auctor, dolor ligula tincidunt libero, id eleifend enim purus elementum sapien. Morbi luctus fringilla consequat."; }
+
+/* Import Grid and Structures */
+/*************************************
+	FRAMEWORK | GLOBAL STYLES
+*************************************/
+* {
+  padding: 0em;
+  margin: 0em; }
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+a[href^=tel] {
+  color: inherit;
+  /*text-decoration: none;*/ }
+
+/*************************************
+	FRAMEWORK | CSS BASELINE
+*************************************/
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: .9rem;
+  text-align: center;
+  /*background: #323232; For Development Only*/
+  /*overflow: hidden;   For Mobile Devices Only, stops page from bouncing on scroll*/ }
+
+p {
+  margin-top: 1em; }
+
+/*************************************
+	FRAMEWORK | STRUCTURES
+*************************************/
+/* HEIGHT */
+/* PADDING */
+/* WIDTH */
+/* DISPLAY */
+/* BACKGROUND | COLOR */
+/* HEIGHT | WIDTH */
+/* PADDING */
+/* MARGIN */
+/* UNIVERSAL PROPERTY */
+/* FLOAT | ALIGN */
+/****************************************************
+	FRAMEWORK | DYNAMIC GRID (DYNAGRID) SYSTEM SETTINGS
+*****************************************************/
+/*
+	BREAKPOINTS
+	==============================================================================
+	These are your Media Query Breakpoints. Modify as necessary.
+	TODO: Add portrait and landspace breakpoints.  Add em conversion option.
+*/
+/*
+	MAX WIDTH
+	==============================================================================
+	If you want a full-width responsive site, set the max-width to 100%.
+	Otherwise, specify a smaller fixed width, $break-desktop-lg for example.
+*/
+/* Full Width   $max-width: 100%;*/
+/* Fixed Width*/
+/*
+	ROW CLASS STRUCTURES
+	==============================================================================
+*/
+/* TODO: Change row to section.  Sections will be for sections of content, and rows can be used for seperation of content within that section.
+Consider also applying this style to html seperators (header, section, footer, etc.)
+ */
+.row {
+  /* Debug */
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; }
+
+/* ROW BG: Wrap around row to extend background color if needed. */
+section, header, footer, .row_bg {
+  position: relative;
+  width: 100%;
+  /*background-color: lightgray;  For Development Only !!! */ }
+
+/* Clear Row */
+.row:after, .row_bg:after, section:after, header:after, footer:after {
+  content: "";
+  display: table;
+  /* TODO: should this be table or block? */
+  clear: both; }
+
+/* UNIVESAL MEDIA QUERY */
+/*@mixin media($query) {
+	@content;
+  @if $tablet @media only screen and (min-width: $query) {
+    @content;
+  }
+}*/
+/*@include media(phone, $tablet) {
+  background: red;
+}
+*/
+/*
+	COLUMNS MIXIN w/ MEDIA QUERIES
+	==============================================================================
+	Example usage:	@include columns(tablet, 6, $push:1, $pad:1em)
+
+	! Meant as structure container, not a content container.  Possibly remove margin to avoid usage.
+	TODO: Create column and grid systems for ultimate mix&match flexibility
+	*/
+/* End columns mixin */
+/*
+Note: 2 Types of input: Types and Sets.
+
+Wishlist
+#services_section {
+@include	columns(set) 					(phone, 	phablet, 	tablet, 	desktop-sm, 	desktop-med, 	desktop-lg);
+@include	pad(type) 						(phone, 	phablet, 	tablet, 	desktop-sm, 	desktop-med, 	desktop-lg);
+@include	margin(type)  				(phone, 	phablet, 	tablet, 	desktop-sm, 	desktop-med, 	desktop-lg);
+@include	float(set)						(phone, 	phablet, 	tablet, 	desktop-sm, 	desktop-med, 	desktop-lg);
+
+@include property		(columns, phone, 	phablet, 	tablet, 	desktop-sm, 	desktop-med, 	desktop-lg);
+@include property		(pad, 		phone, 	phablet, 	tablet, 	desktop-sm, 	desktop-med, 	desktop-lg);
+@include property		(margin, 	phone, 	phablet, 	tablet, 	desktop-sm, 	desktop-med, 	desktop-lg);
+@include property		(float, 	phone, 	phablet, 	tablet, 	desktop-sm, 	desktop-med, 	desktop-lg);
+
+
+}
+*/
+/* Import Chunk Styles */
+/*
+TEMPLATE
+//Structure
+  @include columns(1, $phablet:2, $tablet:3, $desktop-sm:4, $desktop-med:5, $desktop-lg:6);
+  @include grid(12, $phablet:2, $tablet:3, $desktop-sm:4, $desktop-med:5, $desktop-lg:6);
+  @include property(height, 26em, $desktop-sm:8em);  // Universal Property
+  @include float-align(ll);
+  @include margin (all2, $phablet:all2, $tablet:all2, $desktop-sm:all2, $desktop-med:all2, $desktop-lg:all2);
+  @include padding (all2, $phablet:all2, $tablet:all2, $desktop-sm:all2, $desktop-med:all2, $desktop-lg:all2);
+  @include width-height-solo(500px, 100px);
+
+//Font
+  @include sanserif_oswald;
+  @include textsize_jumbo2;
+  @include textweight_thin;
+
+//Style
+  @include bg-color-solo($gray19, white);
+  a { @include link-solo(white, none, black); }
+  @include list(tablet, $style:none, $display:inline, $align:bottom, $pad:2em, $first:0em, $last:0em
+
+*/
+#todo {
+  background: #1a1a1a;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 2em; }
+
+#todo .row {
+  width: 1200px;
+  height: 600px;
+  background: white;
+  box-shadow: 10px 10px 23px #0d0d0d; }
+
+#todo_new {
+  /* Example:
+  	@include columns (1, $phablet:1, $tablet:1, $desktop-sm:1, $desktop-med:1, $desktop-lg:1)
+  */
+  /* This is a dynamic property based on total width of the parent element.
+  dynaprop??? we-prop??? dynprop, weprop, uniprop */
+  /* Phone Default */
+  width: 100%;
+  /* Phablet */
+  /* Tablet */
+  /* Desktop-sm */
+  /* Desktop-med */
+  /* Desktop-lg */
+  height: 5em;
+  background: #ABC8E2;
+  padding: 1em; }
+
+#todo_list {
+  /* Example:
+  	@include columns (1, $phablet:1, $tablet:1, $desktop-sm:1, $desktop-med:1, $desktop-lg:1)
+  */
+  /* This is a dynamic property based on total width of the parent element.
+  dynaprop??? we-prop??? dynprop, weprop, uniprop */
+  /* Phone Default */
+  width: 100%;
+  /* Phablet */
+  /* Tablet */
+  /* Desktop-sm */
+  /* Desktop-med */
+  /* Desktop-lg */
+  height: 100%;
+  background: #C4D7ED;
+  padding: 1em; }
+
+.todo_listitems {
+  /* Note: to be used in <ul> tags */
+  /* Example: @include list(tablet, $style:none, $display:inline, $align:bottom, $pad:2em, $first:0em, $last:0em)*/
+  background: #C4D7ED; }
+  @media screen and (min-width: 320px) {
+    .todo_listitems {
+      list-style-type: none; }
+      .todo_listitems li {
+        display: block;
+        vertical-align: bottom;
+        padding: 1em; }
+        .todo_listitems li:first-child {
+          padding-left: 0em; }
+        .todo_listitems li:last-child {
+          padding-right: 0em; } }
+
+#todo_clear {
+  /* Example:
+  	@include columns (1, $phablet:1, $tablet:1, $desktop-sm:1, $desktop-med:1, $desktop-lg:1)
+  */
+  /* This is a dynamic property based on total width of the parent element.
+  dynaprop??? we-prop??? dynprop, weprop, uniprop */
+  /* Phone Default */
+  width: 100%;
+  /* Phablet */
+  /* Tablet */
+  /* Desktop-sm */
+  /* Desktop-med */
+  /* Desktop-lg */
+  height: 5em;
+  background: #ABC8E2;
+  padding: 1em; }
+
+button {
+  color: #FFF;
+  background-color: #3071A9;
+  border-color: #285E8E;
+  border: 1px solid transparent;
+  padding: .5em; }
+
+/*# sourceMappingURL=abstract.css.map */
