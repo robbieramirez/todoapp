@@ -32,33 +32,53 @@
 
 <body>
 
+<div id="todo_title"><h1>TO DO APP</h1></div>
+
   <section id="todo">
-    <div class="row"  ng-controller="TodoListController as todoList">
-      <h2>Todo App</h2>
+    <div class="row" ng-controller="TodoListController as todoList">
+
 
 <!-- New Todo Section -->
       <div id="todo_new">
         <form ng-submit="addItem()">
-              <input type="text" ng-model="listItem"  size="30"
-                     placeholder="Add a Todo">
-              <input type="submit" value="add">
+              <input type="text" ng-model="listItem" placeholder="Add New To Do"><input type="submit" value="+">
       </form>
     </div>
 
+
 <!-- Todo List Section -->
       <div id="todo_list">
-        <h2>Todo List</h2>
+        <h2>Still Remaining</h2>
           <ul class="todo_listitems">
-            <li ng-repeat="todo in todoList"><input type="checkbox" /><button>{{todo.text}} {{todo.date | date: shortDate}}</button><button ng-click="clearItem($index)">&times;</button></li>
+            <li ng-repeat="todo in todoList | filter: {completed:false}">
+              <div>
+                <span class="item_checkbox"><input type="checkbox" ng-model="todo.completed"/></span>
+                <span class="item_text completed-{{todo.completed}}">{{todo.text}}<br /><span class="item_date"><em>{{todo.date | date: shortDate}}</em></span></span>
+                <button ng-click="clearItem($index)" class="item_clear">&times;</button>
+              </div>
+            </li>
+          </ul>
 
-
+<ul class="todo_listitems">
+  <h2>Completed Items</h2>
+            <li ng-repeat="todo in todoList | filter: {completed:true}">
+              <div>
+                <span class="item_checkbox"><input type="checkbox" ng-model="todo.completed"/></span>
+                <span class="item_text completed-{{todo.completed}}">{{todo.text}}</span>
+                <!--<span class="item_date">{{todo.date | date: shortDate}}</span>-->
+                <button ng-click="clearItem($index)" class="item_clear">&times;</button>
+              </div>
+            </li>
           </ul>
       </div>
 
-<!-- Remove Section -->
-  <div id="todo_clear">
-      <button ng-click="clearList()">Clear List</button><br />
-    </div>
+<!-- Clear Section -->
+<section id="todo_new">
+  <button ng-click="clearList()" id="todo_clear">Clear List</button><br />
+  Created by Robbie Ramirez
+</section>
+
+
 
 
 
